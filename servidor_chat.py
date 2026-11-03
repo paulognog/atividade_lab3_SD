@@ -16,7 +16,7 @@ def tratar_cliente(conexao, endereco):
             print(f"{endereco}: {mensagem}")
             for c in clientes:
                 if c != conexao:
-                    c.send(mensagem.encode('utf-8'))
+                    c.send(f"{endereco[0]}:{endereco[1]}: {mensagem}".encode('utf-8'))
         except:
             break
     clientes.remove(conexao)

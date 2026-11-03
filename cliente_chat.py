@@ -25,6 +25,7 @@ def iniciar_cliente():
         mensagem = input()
         if mensagem.strip().lower() == "sair":
             break
+        print(f"eu: {mensagem}")
         cliente.send(mensagem.encode('utf-8'))
 
     cliente.close()
